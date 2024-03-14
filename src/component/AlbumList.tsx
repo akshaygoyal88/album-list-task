@@ -25,7 +25,7 @@ const List: React.FC = () => {
 
   const handleScroll = () => {
     if (
-      window.innerHeight + document.documentElement.scrollTop ===
+      window.innerHeight + document.documentElement.scrollTop <=
       document.documentElement.offsetHeight - 20
     ) {
       setLimit((prev) => prev + 10);
