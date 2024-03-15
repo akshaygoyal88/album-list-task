@@ -1,0 +1,21 @@
+.fixed-content {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    padding: 10px;
+    z-index: 999;
+  }
+  
+  .album-list-container {
+   display: flex;
+   justify-content: space-between;
+   margin-top: 10rem;
+  }
+  
+  .content-scrollable {
+    display: flex;
+    flex-direction: column;
+  }
+  

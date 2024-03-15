@@ -1,5 +1,5 @@
-import React from "react";
 import { albumPicsType } from "../store/FavoritesContext";
+import "./AlbumCard.scss";
 
 export default function AlbumCard({
   item,
@@ -11,9 +11,8 @@ export default function AlbumCard({
   buttonText: string;
 }) {
   return (
-    <div key={item.id}>
+    <div className="album-card" key={item.id}>
       <img src={item.url} alt={item.title} />
-      <p>ID: {item.id}</p>
       <p>Title: {item.title}</p>
       <button onClick={() => handleButton(item)}>{buttonText}</button>
     </div>

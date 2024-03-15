@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Dashboard from "./component/Dashboard";
-import List from "./component/AlbumList";
+import AlbumList from "./component/AlbumList";
 import { FavoritesProvider } from "./store/FavoritesContext";
 
 const App: React.FC = () => {
@@ -10,7 +10,7 @@ const App: React.FC = () => {
       <FavoritesProvider>
         <Routes>
           <Route path="/" element={<Dashboard />} />
-          <Route path="/list" element={<List />} />
+          <Route path="/list" element={<AlbumList />} />
         </Routes>
       </FavoritesProvider>
     </Router>

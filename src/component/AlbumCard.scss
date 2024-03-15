@@ -1,0 +1,49 @@
+// AlbumCard.scss
+.album-card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    width:50%;
+    align-items: center;
+  }
+  
+  .album-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .album-card img {
+    width: 120px;
+    height: 120px;
+    border-radius: 8px;
+    margin-right: 20px;
+  }
+  
+  .album-card-content {
+    flex: 1;
+  }
+  
+  .album-card-content p {
+    margin: 5px 0;
+  }
+  
+  .album-card button {
+    background-color: #4CAF50;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .album-card button:hover {
+    background-color: #45a049;
+  }
+  
