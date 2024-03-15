@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { FavoritesContext, albumPicsType } from "../store/FavoritesContext";
 import AlbumCard from "./AlbumCard";
+import "./FavoritesList.scss";
 
 const FavoritesList = () => {
   const favCtx = useContext(FavoritesContext);
@@ -9,7 +10,7 @@ const FavoritesList = () => {
     favCtx.removeFavorite(fav);
   };
   return (
-    <div>
+    <div className="fav-con">
       <h2>Favorites</h2>
       <ul>
         {favCtx.favorites?.map((fav: albumPicsType) => (

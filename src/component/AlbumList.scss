@@ -10,7 +10,9 @@
   
   .album-list-container {
    display: flex;
-   justify-content: space-between;
+   flex-direction: column;
+// //    justify-content: space-between;
+align-items: center;
    margin-top: 10rem;
   }
   
