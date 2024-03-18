@@ -15,9 +15,8 @@ function debounce(func: Function, delay: number) {
 }
 
 const AlbumList: React.FC = () => {
-  const [items, setItems] = useState<albumPicsType[]>([]);
-  const [page, setPage] = useState<number>(1);
   const favCtx = useContext(FavoritesContext);
+  const page = favCtx.page;
 
   useEffect(() => {
     const fetchItems = async () => {
@@ -25,17 +24,19 @@ const AlbumList: React.FC = () => {
         `https://jsonplaceholder.typicode.com/albums/1/photos?_page=${page}&_limit=10`
       );
       const data = await response.json();
-      setItems((prevItems) => [...prevItems, ...data]);
+      favCtx.updateList(data);
     };
 
-    fetchItems();
+    if (page > favCtx.list.length / 10) {
+      fetchItems();
+    }
 
     const handleScroll = () => {
       if (
         window.innerHeight + document.documentElement.scrollTop >=
         document.documentElement.offsetHeight - 20
       ) {
-        setPage((prevPage) => prevPage + 1);
+        favCtx.updatePage();
       }
     };
 
@@ -58,7 +59,7 @@ const AlbumList: React.FC = () => {
         </Link>
       </div>
       <div className="content-scrollable">
-        {items.map((item) => (
+        {favCtx.list.map((item) => (
           <AlbumCard
             key={item.id}
             item={item}

@@ -11,7 +11,7 @@ export default function AlbumCard({
   buttonText: string;
 }) {
   return (
-    <div className="album-card" key={item.id}>
+    <div className="album-card" key={item.id} id={`${item.id}`}>
       <img src={item.url} alt={item.title} />
       <p>Title: {item.title}</p>
       <button onClick={() => handleButton(item)}>{buttonText}</button>
